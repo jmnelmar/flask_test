@@ -1,0 +1,28 @@
+{%extends "layout.html" %}
+
+{% block content %}
+<div class="card" style="display:flex;">
+
+
+    <div class="card-body">
+        <div style="flex: 1">
+            <h3 class="card-title">Home</h5>
+                <h4 class="card-subtitle mb-2 text-muted">It's easy work with flask!</h6>
+        </div>
+
+
+        {% for post in posts %}
+            <article class="media content-section">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <a class="mr-2" href="#">{{ post.author }}</a>
+                        <small class="text-muted">{{ post.date_posted }}</small>
+                    </div>
+                    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                    <p class="article-content">{{ post.content }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content%}
